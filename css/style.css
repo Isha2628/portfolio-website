@@ -5,12 +5,6 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
-  color: #1a1a1a;
-}
-
 img {
   max-width: 100%;
   display: block;
@@ -20,6 +14,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 
 :root {
   --ink: #0B0E14;
@@ -35,6 +30,7 @@ body {
   background-color: var(--ink);
   color: var(--text);
   font-family: 'Inter', sans-serif;
+  line-height: 1.6;
 }
 
 h1, h2, h3, .logo {
@@ -82,7 +78,6 @@ header {
   color: var(--accent);
   background-color: rgba(217, 164, 65, 0.08);
 }
-
 .hero {
   padding: 5rem 5% 3rem;
   display: flex;
@@ -229,10 +224,11 @@ section h2 {
 
 .skills-list {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 0.9rem;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .skills-list li {
@@ -243,16 +239,7 @@ section h2 {
   padding: 0.6rem 1.1rem;
   border-radius: 6px;
   font-size: 0.9rem;
-}
-
-.skills-list li::before {
-  content: "<";
-  color: var(--text-muted);
-}
-
-.skills-list li::after {
-  content: " />";
-  color: var(--text-muted);
+  text-align: center;
 }
 .education-item {
   background-color: var(--panel);
@@ -273,13 +260,33 @@ section h2 {
   color: var(--text-muted);
   font-size: 0.95rem;
 }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2.5rem;
+  align-items: start;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-info p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.contact-email {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent-teal);
+  font-size: 0.9rem;
+}
 
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
 }
 
 .contact-form input,
@@ -307,7 +314,6 @@ section h2 {
 .contact-form button {
   align-self: flex-start;
 }
-
 footer {
   text-align: center;
   padding: 2.5rem 5%;
@@ -331,4 +337,9 @@ footer {
 
 .social-links a:hover {
   color: var(--accent);
+}
+@media (max-width: 700px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
