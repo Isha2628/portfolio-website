@@ -14,8 +14,6 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
-
 :root {
   --ink: #0B0E14;
   --panel: #141922;
@@ -36,7 +34,6 @@ body {
 h1, h2, h3, .logo {
   font-family: 'Space Grotesk', sans-serif;
 }
-
 header {
   display: flex;
   justify-content: space-between;
@@ -77,6 +74,10 @@ header {
 .nav-links a:hover {
   color: var(--accent);
   background-color: rgba(217, 164, 65, 0.08);
+}
+
+.nav-links a.active-link {
+  color: var(--accent);
 }
 .hero {
   padding: 5rem 5% 3rem;
@@ -167,7 +168,6 @@ header {
   gap: 1rem;
   margin-top: 2rem;
 }
-
 .btn {
   padding: 0.75rem 1.7rem;
   border-radius: 8px;
@@ -198,7 +198,6 @@ header {
   border-color: var(--accent);
   color: var(--accent);
 }
-
 section {
   padding: 4rem 5%;
   max-width: 900px;
@@ -221,7 +220,6 @@ section h2 {
   max-width: 700px;
   margin: 0 auto;
 }
-
 .skills-list {
   list-style: none;
   display: grid;
@@ -338,10 +336,33 @@ footer {
 .social-links a:hover {
   color: var(--accent);
 }
-@media (max-width: 700px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: var(--ink);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+#scrollTopBtn:hover {
+  background-color: #c4923a;
+  transform: translateY(-3px);
+}
+
+#scrollTopBtn.show {
+  display: flex;
 }
 @media (max-width: 900px) {
   header {
@@ -362,6 +383,10 @@ footer {
 
   section {
     padding: 3rem 5%;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 600px) {
@@ -420,5 +445,12 @@ footer {
   .social-links {
     flex-direction: column;
     gap: 0.8rem;
+  }
+
+  #scrollTopBtn {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
   }
 }
