@@ -1,6 +1,7 @@
-
 console.log("Portfolio project initialized ✅");
+
 const scrollTopBtn = document.getElementById('scrollTopBtn');
+
 window.addEventListener('scroll', () => {
   if (window.scrollY > 300) {
     scrollTopBtn.classList.add('show');
@@ -8,23 +9,26 @@ window.addEventListener('scroll', () => {
     scrollTopBtn.classList.remove('show');
   }
 });
+
 scrollTopBtn.addEventListener('click', () => {
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
   });
 });
+
 const contactForm = document.querySelector('.contact-form');
 
 contactForm.addEventListener('submit', (e) => {
-  e.preventDefault(); 
+  e.preventDefault();
 
   const name = document.querySelector('.contact-form input[type="text"]').value;
 
   alert(`Thanks for reaching out, ${name}! I'll get back to you soon.`);
 
-  contactForm.reset(); 
+  contactForm.reset();
 });
+
 const sections = document.querySelectorAll('section[id], header[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 
