@@ -12,7 +12,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         if (target) {
 
-            target.scrollIntoView({
+            const offsetTop = target.getBoundingClientRect().top + window.scrollY - 90;
+
+            window.scrollTo({
+
+                top: offsetTop,
 
                 behavior: "smooth"
 
